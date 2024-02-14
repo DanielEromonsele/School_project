@@ -1,7 +1,12 @@
 import { FaPen } from "react-icons/fa";
 import dummy from "../assets/dummy.jpg"
 import { NavLink } from "react-router-dom";
+import { useState } from "react";
+import Input from "../components/reUse/Input";
 const StudentProfile = () => {
+  const [email, setEmail] = useState<string>("")
+  const [firstName, setFirstName] = useState<string>("")
+  const [lastName, setLastName] = useState<string>("")
   return (
       <div>
           <div className="w-full h-[150px] flex justify-center items-center bg-blue-800 gap-4">
@@ -19,9 +24,34 @@ const StudentProfile = () => {
               <NavLink to="/" className={({ isActive }) => 
             isActive ? "font-medium cursor-pointer text-[17px] text-blue-800" :"font-medium cursor-pointer hover:text-blue-800 text-[17px]"}>
                   My personal details
+        </NavLink>
+        <NavLink to="/" className={({ isActive }) => 
+            isActive ? "font-medium cursor-pointer text-[17px] text-blue-800" :"font-medium cursor-pointer hover:text-blue-800 text-[17px]"}>
+                  My school details
               </NavLink>
-              <div>My school details</div>
-          </div>
+      </div>
+      <div className="ml-[40px] mt-4 grid w-[60%] grid-cols-2">
+        <Input
+          placeholder="First name"
+          className="w-[85%]"
+          type="name"
+          required
+          value={firstName}
+          onChange={(e: any) => {
+            setFirstName(e.target.value);
+          }}
+        />
+        <Input
+          placeholder="Last name"
+          className="w-[85%]"
+          type="name"
+          required
+          value={lastName}
+          onChange={(e: any) => {
+            setLastName(e.target.value);
+          }}
+        />
+      </div>
      </div>
   )
 }
