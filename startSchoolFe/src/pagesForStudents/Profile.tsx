@@ -20,7 +20,7 @@ const StudentProfile = () => {
           </div>
           <br />
           <br /><br /><br /><br />
-          <div className="ml-[55px] grid w-[50%] grid-cols-2">
+          <div className="ml-[55px] grid w-[90%] text-[16px] md:w-[50%] grid-cols-2 sm:w-[100%] bg-blue-800">
               <NavLink to="/" className={({ isActive }) => 
             isActive ? "font-medium cursor-pointer text-[17px] text-blue-800" :"font-medium cursor-pointer hover:text-blue-800 text-[17px]"}>
                   My personal details
@@ -30,10 +30,10 @@ const StudentProfile = () => {
                   My school details
               </NavLink>
       </div>
-      <div className="ml-[40px] mt-4 grid w-[60%] grid-cols-2">
+      <div className="ml-[40px] mt-4 grid w-[60%] grid-cols-2 md:w-[90%] sm:w-[100%] ">
         <Input
           placeholder="First name"
-          className="w-[85%]"
+          className="w-[87%]  text-black"
           type="name"
           required
           value={firstName}
@@ -43,7 +43,27 @@ const StudentProfile = () => {
         />
         <Input
           placeholder="Last name"
-          className="w-[85%]"
+          className="w-[87%]  text-black"
+          type="name"
+          required
+          value={lastName}
+          onChange={(e: any) => {
+            setLastName(e.target.value);
+          }}
+        />
+      <Input
+          placeholder="Last name"
+          className="w-[95%] text-black"
+          type="name"
+          required
+          value={lastName}
+          onChange={(e: any) => {
+            setLastName(e.target.value);
+          }}
+        />
+        <Input
+          placeholder="Last name"
+          className="w-[95%] ml-8text-black"
           type="name"
           required
           value={lastName}
@@ -52,6 +72,7 @@ const StudentProfile = () => {
           }}
         />
       </div>
+      
      </div>
   )
 }
